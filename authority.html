@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Examination Authority</title>
+
+<link rel="stylesheet" href="css/style.css">
+
+<style>
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(350px,1fr));
+gap:24px;
+}
+
+label{
+display:block;
+margin-bottom:8px;
+font-weight:600;
+color:#cbd5e1;
+}
+
+input[type="number"],
+input[type="datetime-local"]{
+width:100%;
+}
+
+.result-card{
+display:none;
+margin-top:25px;
+}
+</style>
+
+</head>
+
+<body>
+
+<div class="topbar">
+
+<div class="logo">Examination Authority</div>
+
+<button class="logout" onclick="logout()">Logout</button>
+
+</div>
+
+<div class="container">
+
+<div class="hero">
+
+<div>
+<h1>Approval & Scheduling Portal</h1>
+<p>Approve reviewed question papers and securely schedule their release.</p>
+</div>
+
+<div class="glow"></div>
+
+</div>
+
+<div class="grid">
+
+<!-- Approve Card -->
+
+<div class="card">
+
+<h3>Approve Question Paper</h3>
+
+<label for="approvePaperId">Paper ID</label>
+
+<input
+id="approvePaperId"
+type="number"
+placeholder="Enter Paper ID">
+
+<button onclick="approvePaper()">
+Approve Paper
+</button>
+
+</div>
+
+<!-- Schedule Card -->
+
+<div class="card">
+
+<h3>Schedule Examination</h3>
+
+<label for="schedulePaperId">Paper ID</label>
+
+<input
+id="schedulePaperId"
+type="number"
+placeholder="Enter Paper ID">
+
+<label for="examTime">Exam Date & Time</label>
+
+<input
+id="examTime"
+type="datetime-local">
+
+<button onclick="scheduleExam()">
+Schedule Exam
+</button>
+
+</div>
+
+</div>
+
+<div id="resultCard" class="card result-card">
+
+<h3>Scheduling Summary</h3>
+
+<div class="stats">
+
+<div class="stat-card">
+<h2 id="resultPaperId">-</h2>
+<p>Paper ID</p>
+</div>
+
+<div class="stat-card">
+<h2 id="resultStatus">-</h2>
+<p>Current Status</p>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<script src="js/api.js"></script>
+<script src="js/authority.js"></script>
+
+</body>
+
+</html>
