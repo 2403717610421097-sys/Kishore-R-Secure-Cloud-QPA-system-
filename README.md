@@ -412,7 +412,7 @@ The current implementation runs locally using Node.js and SQLite. The deployment
 
 # Author
 
-**Giridhar**
+**Kishore**
 
 Computer Science and Engineering
 
